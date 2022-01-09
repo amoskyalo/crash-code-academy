@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+import {axiosInstance } from '../../config';
 import './Register.css';
 
 
@@ -10,21 +10,24 @@ const Register = () => {
   const [course,setCourse] = useState("");
   const [number,setNumber] = useState("");
   const [error,setError] = useState(false);
-  
+  const [isfetching, setIsfetching] = useState(false);
   
 
 const handleSubmit = async (e) =>{
 e.preventDefault();
 setError(false);
+setIsfetching(false);
+
 try {
-  const res = await axios.post("/register", {
+  const res = await axiosInstance.post("/register", {
     fullname,
     email,
     course,
     number,
   });
+  setIsfetching(true);
   res.data && window.location.replace("/success");
-
+ 
 } catch (error) {
  setError(true);
 }
@@ -54,7 +57,7 @@ try {
           <input className="registerInput" type="number" placeholder="Enter phone number..." 
              onChange={(e)=>{setNumber(e.target.value)}}
           />
-          <button className="registerButton" type="submit">Register</button>
+          <button className="registerButton" type="submit" disabled={isfetching}>Register</button>
         </form>
         {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong</span>} 
       </div>

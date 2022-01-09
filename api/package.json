@@ -4,8 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "start": "nodemon index.js"
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
 
+  "engines": {
+    "node-pre-gyp": "^0.16.0",
+    "node": "14.x",
+    "npm": "6.x"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +20,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "mongoose": "^6.1.5",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7"
   }
 }

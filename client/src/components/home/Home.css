@@ -1,0 +1,60 @@
+.home {
+    min-height: calc(100vh - 62px);
+    min-height: 100vh;
+    background: url('./default.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.textbox {
+ text-align: center;
+ padding: 0 2rem;
+}
+.btn {
+    padding: 4px 8px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.1rem;
+    color:hsl(205, 78%, 60%);
+    border: 1px solid hsl(205, 78%, 60%);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    color: white;
+    border: 2px solid white;
+
+}
+
+.textbox span{
+    color:hsl(205, 78%, 60%);
+}
+
+.textbox h4 {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.textbox p {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+
+@media screen and (min-width: 768px) {
+    .textbox h4 {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    
+    .textbox p {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    
+}

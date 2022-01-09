@@ -1,0 +1,14 @@
+.success {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.success-m {
+  margin: 7rem;
+
+}
+.success-logo {
+    font-size: 2rem;
+}

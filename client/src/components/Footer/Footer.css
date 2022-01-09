@@ -1,0 +1,46 @@
+.Footer {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1rem;
+}
+
+.reserved {
+    margin: 0.5rem;
+}
+
+.newsletter{
+	max-width: 550px;
+	width: 100%;
+	position: relative;
+}
+
+.newsletter .input{
+	width: 100%;
+	padding: 30px 100px 30px 60px;
+	border-radius: 5px;
+	border: none;
+	font-weight: bold;
+}
+
+.newsletter .btn{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 30px;
+	background:rgb(238, 94, 94);
+	padding: 15px 20px;
+	border-radius: 25px;
+	font-size: 12px;
+	letter-spacing: 5px;
+	color: #fff;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+    .Footer {
+        grid-template-columns: 1fr;
+      
+    }
+}

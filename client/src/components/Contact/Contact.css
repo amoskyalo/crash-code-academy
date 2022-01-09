@@ -1,0 +1,41 @@
+.contact-form {
+  max-width: 360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 76px
+  }
+  
+  .contact-form > :not(:last-child) {
+    margin-bottom: 16px;
+  }
+  
+  .contact-form .form-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form .label-content {
+    margin-bottom: 4px;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .contact-form label {
+    text-align: left;
+  }
+
+  .input {
+   border: none;
+   border-bottom: 1px solid hsl(205, 78%, 60%);
+
+  }
+/*
+
+
+  */

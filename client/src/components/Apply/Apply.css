@@ -1,0 +1,22 @@
+.Apply{
+    height: 40vh;
+    display: grid;
+    justify-self: center;
+    align-items: center;
+    text-align: center;  
+    margin-top: 20px;  
+    background-color: rgb(255, 254, 248);
+}
+.apply-content {
+    margin: 4px 8px;
+}
+
+.apply-content .btn:hover {
+   color: black;
+   border: 2px solid black;
+
+}
+
+.apply-content p {
+    font-size: 1rem;
+}

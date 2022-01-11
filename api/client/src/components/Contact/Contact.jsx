@@ -21,34 +21,34 @@ const Contact = () => {
  };
     return (
 
-      <div class="contactme" id="contact">
-      <div class="contactOverlay">
-        <div class="container">
-          <div class="form">
+      <div className="contactme" id="contact">
+      <div className="contactOverlay">
+        <div className="container">
+          <div className="form">
             <form action="" onSubmit={sendEmail}>
-              <div class="formWord">
+              <div className="formWord">
                 <h2>Say Hello!</h2>
                 <span>Full Name</span>
                 <br />
-                <input class="input100" type="text" name="fullName" required />
+                <input className="input100" type="text" name="fullName" required />
                 <br />
                 <span>Phone Number</span>
                 <br />
-                <input class="input100" type="text" name="phone" required />
+                <input className="input100" type="text" name="phone" required />
                 <br />
                 <span>Enter Email</span>
                 <br />
-                <input class="input100" type="text" name="email" required />
+                <input className="input100" type="text" name="email" required />
                 <br />
               </div>
-              <div class="formWord">
+              <div className="formWord">
                 <span>Message</span>
                 <br />
                 <textarea name="message" required></textarea>
                 <br />
                 <button>SUBMIT</button>
 
-                <div class="row">All Done</div>
+                <div className="row">All Done</div>
               </div>
             </form>
           </div>

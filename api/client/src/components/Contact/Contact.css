@@ -1,95 +1,68 @@
-.contactme {
-  width: 100%;
-  background-image: url("http://www.mmasynergy.com/images/inner-banner.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 5%;
+body,
+input,
+textarea,
+button {
+  font-family: "Inter", sans-serif;
 }
-.contactOverlay {
-  width: 100%;
-  padding-top: 10%;
-  padding-bottom: 10%;
-  background-color: rgba(0, 0, 0, 0.921);
-}
+
+
+
+
 .form {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: 100vh;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
+  flex-direction: column;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
-form {
-  width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  background-color: white;
-  overflow: hidden;
-  border-radius: 20px;
-}
-form button {
-  width: 190px;
-  height: 55px;
-  border: 0;
-  border-radius: 5px;
-  background-color: #001517;
-  -webkit-transition: 0.5s linear;
-  -o-transition: 0.5s linear;
-  transition: 0.5s linear;
-  color: white;
-  font-weight: bold;
-  margin-top: 20%;
-}
-form button:hover {
-  background-color: unset;
-  border: 2px solid #e49504;
-  -webkit-transition: 0.5s linear;
-  -o-transition: 0.5s linear;
-  transition: 0.5s linear;
-  color: black;
-}
-.formWord {
-  width: 40%;
-  padding: 4%;
-}
-.formWord h2 {
-  font-size: 35px;
-  font-weight: bold;
-  font-family: "Josefin Sans", sans-serif;
-  margin-bottom: 10%;
-}
-.formWord input {
-  width: 100%;
-  height: 50px;
-  margin-bottom: 10%;
-  border: 0;
-  margin-top: 2%;
-  padding-left: 3%;
-  background: #ffffff;
-  -webkit-box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
-  box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
-}
-.formWord textarea {
-  width: 100%;
-  margin-bottom: 10%;
-  border: 0;
-  margin-top: 2%;
-  height: 80px;
-  color: black;
-  -webkit-box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
-  box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
-  padding-left: 3%;
-}
-/*
 
+.form > h1 {
+  margin-bottom: 30px;
+}
 
-  */
+.form > input,
+textarea {
+  padding: 20px;
+  border-radius: 3px;
+  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
+  margin-bottom: 20px;
+  border: 1px solid lightgray;
+  /* border: none; */
+  background: #fff;
+  font-size: 16px;
+  color: rgb(0, 0, 32);
+  outline: none;
+}
+
+.form > input:focus,
+textarea:focus {
+  border: 1px solid rgb(0, 0, 196);
+}
+
+.form > textarea {
+  height: 150px;
+  max-width: 400px;
+  min-height: 100px;
+}
+
+.form > label {
+  padding-bottom: 10px;
+  color: rgb(0, 0, 32);
+  font-weight: bold;
+}
+
+.form > button {
+  padding: 20px;
+  border: none;
+  background-color: rgb(2, 2, 110);
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.form > button:hover {
+  background-color: rgb(0, 0, 196);
+}

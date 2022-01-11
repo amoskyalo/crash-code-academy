@@ -4,59 +4,54 @@ import emailjs from 'emailjs-com';
 import './Contact.css';
 
 const Contact = () => {
-
-  const [error,setError] = useState(false);
+  const [loader, setLoader] = useState(false);
 
 
  const sendEmail = (e) => {
  e.preventDefault();
  
  emailjs.sendForm('service_bjrnaqc','template_y707vwi',e.target,'user_DDiWYW49rwBc0ZfRYl7dO')
- .then((result)=>{
-   console.log(result.text);
+ .then(()=>{
+  setLoader(false);
+        alert("Your message has been submitted👍");
  }, (error) => {
-  setError(true);
+  alert(error.message);
+  setLoader(false);
  });
  e.target.reset()
  };
     return (
+     
+      <form className="form" onSubmit={sendEmail}>
+      <h1>Contact Us 🤳</h1>
 
-      <div className="contactme" id="contact">
-      <div className="contactOverlay">
-        <div className="container">
-          <div className="form">
-            <form action="" onSubmit={sendEmail}>
-              <div className="formWord">
-                <h2>Say Hello!</h2>
-                <span>Full Name</span>
-                <br />
-                <input className="input100" type="text" name="fullName" required />
-                <br />
-                <span>Phone Number</span>
-                <br />
-                <input className="input100" type="text" name="phone" required />
-                <br />
-                <span>Enter Email</span>
-                <br />
-                <input className="input100" type="text" name="email" required />
-                <br />
-              </div>
-              <div className="formWord">
-                <span>Message</span>
-                <br />
-                <textarea name="message" required></textarea>
-                <br />
-                <button>SUBMIT</button>
+      <label>Name</label>
+      <input
+        placeholder="Name"
+        type='text'
+        value='name'
+      />
 
-                <div className="row">All Done</div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      {error && <span style={{color:"red", marginTop:"10px"}}>Message not sent</span>} 
-    </div>
-  
+      <label>Email</label>
+      <input
+        type='email'
+        placeholder="Email"
+        value='email'
+      />
+
+      <label>Message</label>
+      <textarea
+        placeholder="Message"
+        value='message'
+      ></textarea>
+
+      <button
+        type="submit"
+        style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
+      >
+        Submit
+      </button>
+    </form>
 
     )
 }

@@ -1,6 +1,7 @@
 const Register = require('../models/Register');
 const router = require('express').Router();
 
+
 router.post('/register', async (req,res)=> {
   try {
     const savedReg = await new Register({

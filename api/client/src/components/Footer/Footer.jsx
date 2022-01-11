@@ -33,7 +33,7 @@ const Footer = () => {
          
 
           <div className="reserved">
-              <span> &#169; {date} <b> Perez Bookshop. All rights and reserved</b></span>
+              <span> &#169; {date} <b> Crash Code Academy. All rights and reserved</b></span>
           </div>
               
            </div>

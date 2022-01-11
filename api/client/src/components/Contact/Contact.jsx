@@ -1,5 +1,6 @@
 import React,{ useState} from 'react'
 //import emailjs from '@emailjs/browser';
+import { Form, Button } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
 import './Contact.css';
 
@@ -22,30 +23,50 @@ const Contact = () => {
     return (
 
       <div className="form" >
-        <form  onSubmit={sendEmail} className="contact-form" >
-    <div className="form-field">
-      <label htmlFor="name">
-        <div className="label-content">Name:</div>
-        <input type="text" className='input' name="name" required />
-      </label>
-    </div>
-
-    <div className="form-field">
-      <label htmlFor="email">
-        <div className="label-content">Email:</div>
-        <input type="email" className='input' name="email" required />
-      </label>
-    </div>
-
-    <div className="form-field">
-      <label htmlFor="message">
-        <div className="label-content">Message:</div>
-        <textarea className="stretch" name="message" rows="5" required />
-      </label>
-    </div>
-
-    <button type="submit" className='btn'>Send</button>
-  </form>
+      <form onSubmit={sendEmail}>
+        <Form.Group controlId="name">
+          <Form.Label>Full Name</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
+          />
+        </Form.Group>
+        <Form.Group controlId="email">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            
+            placeholder="Enter your email"
+            
+          />
+        </Form.Group>
+        <Form.Group controlId="subject">
+          <Form.Label>Subject</Form.Label>
+          <Form.Control
+            type="text"
+            name="subject"
+            
+            placeholder="Enter subject"
+           
+          />
+        </Form.Group>
+        <Form.Group controlId="subject">
+          <Form.Label>Message</Form.Label>
+          <Form.Control
+            as="textarea"
+            name="message"
+            
+            rows="3"
+            placeholder="Enter your message"
+            
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </form>
    {error && <span style={{color:"red", marginTop:"10px"}}>Message not sent</span>} 
 </div>
     )

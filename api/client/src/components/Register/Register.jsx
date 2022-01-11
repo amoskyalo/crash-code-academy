@@ -10,13 +10,12 @@ const Register = () => {
   const [course,setCourse] = useState("");
   const [number,setNumber] = useState("");
   const [error,setError] = useState(false);
-  const [isfetching, setIsfetching] = useState(false);
   
 
 const handleSubmit = async (e) =>{
 e.preventDefault();
 setError(false);
-setIsfetching(false);
+
 
 try {
   const res = await axiosInstance.post("/register", {
@@ -25,7 +24,6 @@ try {
     course,
     number,
   });
-  setIsfetching(true);
   res.data && window.location.replace("/success");
  
 } catch (error) {
@@ -34,9 +32,6 @@ try {
 
 
 }
-
-
-
     return (
         <div className="register" onSubmit={handleSubmit}>
         <span className="registerTitle">Register</span>
@@ -57,7 +52,7 @@ try {
           <input className="registerInput" type="number" placeholder="Enter phone number..." 
              onChange={(e)=>{setNumber(e.target.value)}}
           />
-          <button className="registerButton" type="submit" disabled={isfetching}>Register</button>
+          <button className="registerButton" type="submit">Register</button>
         </form>
         {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong</span>} 
       </div>

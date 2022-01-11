@@ -1,6 +1,5 @@
 import React,{ useState} from 'react'
 //import emailjs from '@emailjs/browser';
-import { Form, Button } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
 import './Contact.css';
 
@@ -22,53 +21,43 @@ const Contact = () => {
  };
     return (
 
-      <div className="form" >
-      <form onSubmit={sendEmail}>
-        <Form.Group controlId="name">
-          <Form.Label>Full Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="name"
-            placeholder="Enter your full name"
-          />
-        </Form.Group>
-        <Form.Group controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            name="email"
-            
-            placeholder="Enter your email"
-            
-          />
-        </Form.Group>
-        <Form.Group controlId="subject">
-          <Form.Label>Subject</Form.Label>
-          <Form.Control
-            type="text"
-            name="subject"
-            
-            placeholder="Enter subject"
-           
-          />
-        </Form.Group>
-        <Form.Group controlId="subject">
-          <Form.Label>Message</Form.Label>
-          <Form.Control
-            as="textarea"
-            name="message"
-            
-            rows="3"
-            placeholder="Enter your message"
-            
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </form>
-   {error && <span style={{color:"red", marginTop:"10px"}}>Message not sent</span>} 
-</div>
+      <div class="contactme" id="contact">
+      <div class="contactOverlay">
+        <div class="container">
+          <div class="form">
+            <form action="" onSubmit={sendEmail}>
+              <div class="formWord">
+                <h2>Say Hello!</h2>
+                <span>Full Name</span>
+                <br />
+                <input class="input100" type="text" name="fullName" required />
+                <br />
+                <span>Phone Number</span>
+                <br />
+                <input class="input100" type="text" name="phone" required />
+                <br />
+                <span>Enter Email</span>
+                <br />
+                <input class="input100" type="text" name="email" required />
+                <br />
+              </div>
+              <div class="formWord">
+                <span>Message</span>
+                <br />
+                <textarea name="message" required></textarea>
+                <br />
+                <button>SUBMIT</button>
+
+                <div class="row">All Done</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      {error && <span style={{color:"red", marginTop:"10px"}}>Message not sent</span>} 
+    </div>
+  
+
     )
 }
 

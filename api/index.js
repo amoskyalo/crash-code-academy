@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const path = require('path');
+const cors = require('cors');
 const CONNECTDB = require('./Database/connect');
 const RegRoute = require('./routes/Register');
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ app.get('*', (req, res) => {
 
 
 //middlewares
+app.use(cors());
 app.use(express.json());
 app.use('/api/course',RegRoute);
 

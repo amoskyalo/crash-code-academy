@@ -2,7 +2,7 @@ const people = [
     {
       id: 1,
       name: 'Amos Kyalo',
-      job: 'Software Engineer',
+      job: 'Frontend Engineer',
       image:
         'https://avatars.githubusercontent.com/u/91586973?v=4',
       text:
@@ -11,7 +11,7 @@ const people = [
     {
       id: 2,
       name: 'collins mbathi',
-      job: 'Full stack Engineer',
+      job: 'Backend Engineer',
       image:
         'https://avatars.githubusercontent.com/u/74602469?v=4',
       text:

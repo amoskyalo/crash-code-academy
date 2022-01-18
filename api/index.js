@@ -21,6 +21,7 @@ app.get('*', (req, res) => {
 
 //middlewares
 app.use(cors());
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use('/api/course',RegRoute);
 

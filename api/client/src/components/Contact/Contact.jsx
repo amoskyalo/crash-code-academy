@@ -1,53 +1,60 @@
-import React,{ useState} from 'react'
+import React,{ useState,useRef} from 'react'
 //import emailjs from '@emailjs/browser';
 import emailjs from 'emailjs-com';
 import './Contact.css';
 
-const Contact = () => {
 
-  const [error,setError] = useState(false);
+const Contact = () => {
+  const [loader, setLoader] = useState(false);
+  const form = useRef();
 
 
  const sendEmail = (e) => {
  e.preventDefault();
  
- emailjs.sendForm('service_bjrnaqc','template_y707vwi',e.target,'user_DDiWYW49rwBc0ZfRYl7dO')
- .then((result)=>{
-   console.log(result.text);
+ emailjs.sendForm('service_bjrnaqc','template_y707vwi',form.current,'user_DDiWYW49rwBc0ZfRYl7dO')
+ .then(()=>{
+  setLoader(false);
+        alert("Your message has been submitted👍");
  }, (error) => {
-  setError(true);
+  alert(error.message);
+  setLoader(false);
  });
- e.target.reset()
+ form.current.reset()
  };
     return (
+     
+      <form ref={form} className="form" onSubmit={sendEmail}>
+      <h1>Contact Us 🤳</h1>
 
-      <div className="form" >
-        <form  onSubmit={sendEmail} className="contact-form" >
-    <div className="form-field">
-      <label htmlFor="name">
-        <div className="label-content">Name:</div>
-        <input type="text" className='input' name="name" required />
-      </label>
-    </div>
+      <label>Name</label>
+      <input
+        placeholder="Name"
+        type='text'
+       
+      />
 
-    <div className="form-field">
-      <label htmlFor="email">
-        <div className="label-content">Email:</div>
-        <input type="email" className='input' name="email" required />
-      </label>
-    </div>
+      <label>Email</label>
+      <input
+        type='email'
+        placeholder="Email"
+       
+      />
 
-    <div className="form-field">
-      <label htmlFor="message">
-        <div className="label-content">Message:</div>
-        <textarea className="stretch" name="message" rows="5" required />
-      </label>
-    </div>
+      <label>Message</label>
+      <textarea name='message'
+        placeholder="Message"
+      
+      ></textarea>
 
-    <button type="submit" className='btn'>Send</button>
-  </form>
-   {error && <span style={{color:"red", marginTop:"10px"}}>Message not sent</span>} 
-</div>
+      <button
+        type="submit"
+       className='btn' style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
+      >
+        Submit
+      </button>
+    </form>
+
     )
 }
 

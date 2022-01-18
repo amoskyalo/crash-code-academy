@@ -7,7 +7,6 @@
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
-
   "engines": {
     "node-pre-gyp": "^0.16.0",
     "node": "14.x",
@@ -17,10 +16,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
+    "helmet": "^5.0.1",
     "mongoose": "^6.1.5",
-    "nodemon": "^2.0.15",
+    "morgan": "^1.10.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

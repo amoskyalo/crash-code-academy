@@ -1,1 +1,1 @@
-export const BASE_URL = "https://crashcodeacademy.herokuapp.com/api/course"
+export const BASE_URL = "https://crashcodeaca.herokuapp.com/api/course"
